@@ -2,7 +2,9 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import {dbConnection} from "./db.js";
-import {userRouter} from "./Routes/user.js"
+import { urlRouter } from "./Routes/url.js";
+import { userRouter } from "./Routes/user.js";
+
 
 
 //configure env
@@ -21,7 +23,8 @@ app.use(cors());
 app.use(express.json());
 
 //Routes
-app.use("/user", userRouter);
+app.use("/user", userRouter); 
+app.use("/url", urlRouter);
 
 
 //start Listening
